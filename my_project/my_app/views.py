@@ -21,3 +21,16 @@ def bank_detail(request, ifsc=None):
         "instance": instance,
     }
     return render(request, "bank_detail.html", context)
+
+
+# def bank_list(request, city=None):
+#     queryset = BankDetail.objects.all()
+#     context = {"object_list": queryset, "title": "list"}
+#     return render(request, "index.html", context)
+
+
+def bank_list(request):
+    bank_name = request.GET.get('bank_name', '')
+    queryset = BankDetail.objects.filter(bank_name=bank_name)
+    context = {"object_list": queryset, "title": "list"}
+    return render(request, "index.html", context)

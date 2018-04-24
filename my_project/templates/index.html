@@ -1,0 +1,17 @@
+<html>
+
+<body>
+    <h1>{{title}} is working</h1>
+    {% for obj in object_list %} {{obj.ifsc}}
+    <br/> {{obj.bank_id}}
+    <br/> {{obj.branch}}
+    <br/> {{obj.address}}
+    <br/> {{obj.city}}
+    <br/> {{obj.district}}
+    <br/> {{obj.state}}
+    <br/> {{obj.bank_name}}
+    <br/> {% endfor %}
+</body>
+
+
+</html>
